@@ -28,7 +28,7 @@ def my_profile(request):
 
 def logout_user(request):
     logout(request)
-    return redirect('login')
+    return redirect('login1')
 
 def request_message(request):
     data = json.loads(request.body)
@@ -104,8 +104,3 @@ def item_data(request):
 
 def payment(request):
     return render(request,'payments.html',{})
-
-def cartid(request,cid):
-    cartId=items.objects.get(pk=cid)
-    price=cartId.price
-    return render(request,'payment.html',{'price':price})

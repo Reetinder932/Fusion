@@ -17,15 +17,15 @@
 
 <body>
 
-    <div class="  mx-auto bg-gradient-to-r from-blue-600 to-blue-800 overflow-hidden ">
-        <div class=" flex :flex-row justify-between  text-center bg-gray-700 ">
-            <div class=" md:flex md:flex-row md:justify-center ml-3 inline-flex mt-3">
+    <div class="   mx-auto bg-gradient-to-r from-blue-600 to-blue-800 overflow-hidden ">
+        <div class=" pt-3 pb-3 flex :flex-row justify-between  text-center bg-gray-700 ">
+            <div class=" md:flex md:flex-row md:justify-center ml-3 inline-flex">
                 <div class=" bg-gradient-to-r from-purple-400 to-red-400 w-12 h-12 rounded-lg md:ml-10 mt-3">
                 </div>
                 <h1 class="ml-2 pt-5 text-white">SHOPit</h1>
             </div>
-            <div
-                class="text-white flex flex-row  ml-7 mt-8 mb-7 sm:ml-40 px-5 py-2 rounded-lg border-2 bg-black text-start ">
+            <!-- <div
+                 class="text-white flex flex-row  ml-7 mt-8 mb-7 sm:ml-40 px-5 py-2 rounded-lg border-2 bg-black text-start ">
                 <input type="email" name="email" placeholder="Search"
                     class="  text-white outline-none text-md md:text-start bg-black ">
                 <a href="">
@@ -35,11 +35,11 @@
                             d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                     </svg>
 
-                </a>
+                </a> 
 
 
 
-            </div>
+            </div> -->
             <!-- <div class="mt-2 md:flex md:justify-center ">
                 <nav class="p-5 bg-white shadow md:flex md:items-center md:justify-between"></nav>
                 <span class="text-3xl cursor-pointer mx-2 md:hidden block">
@@ -118,8 +118,13 @@
 
                         </li>
                         <li>
+                            {% if user.is_authenticated %}
+                            <a class=" text-2xl border-2 px-5 py-2 rounded-lg bg-red-700 hover:text-black text-white"
+                                href="{% url 'logout' %}">Logout</a>
+                            {%else%}
                             <a class=" text-2xl border-2 px-5 py-2 rounded-lg bg-red-700 hover:text-black text-white"
                                 href="#">Login</a>
+                            {%endif%}
                         </li>
                     </ul>
                 </div>
@@ -153,14 +158,14 @@
 
         <div class="my-20">
             <div class="flex flex-row justify-center ">
-                <h1 class="text-4xl text-white font-bold md:ml-10 mb-10">Gamepad Collection</h1>
-                <a href="" class="flex flex-row text-3xl text-white md:mr-5">View All
+                <h1 class="text-4xl text-white font-bold md:ml-10 mb-10">Items Collection</h1>
+                <!-- <a href="" class="flex flex-row text-3xl text-white md:mr-5">View All
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3"
                         stroke="currentColor" class="w-6 h-6 pt-3">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
                     </svg>
-                </a>
+                </a> -->
             </div>
             <div id="shopping" class="grid grid-cols-3 gap-2">
             </div>

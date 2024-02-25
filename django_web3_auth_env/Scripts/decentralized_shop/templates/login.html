@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,22 +6,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moralis Auth Django Demo</title>
+    <link href="{% static '/src/styles.css' %}" rel="stylesheet">
 </head>
 
 <body>
-    <div>
-
+    <div class="flex justify-center items-center h-screen ">
         {% if user.is_authenticated %}
         <script>
-            // Redirect to the index page
             window.location.href = "{% url 'index' %}";
         </script>
-        <!-- <a href="{% url 'my_profile' %}"> My profile </a> -->
-        <!-- <a href="{%url 'index'%}"></a> -->
         {% else %}
-        <h1>Web3 login</h1>
-        <button class="btn" id="auth-metamask">Login </button>
+        <div class=" p-8 rounded  text-center">
+            <img src="{% static 'src/OIP-removebg-preview (1).png' %}" class="mb-4 rounded-full" alt="Metamask Logo">
+            <button class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded" id="auth-metamask">
+                Login with Metamask
+            </button>
+        </div>
         {% endif %}
     </div>
 

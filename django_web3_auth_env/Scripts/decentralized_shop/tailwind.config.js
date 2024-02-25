@@ -1,7 +1,8 @@
 module.exports = {
   content: [
     './templates/home.html',
-    // Add paths to other apps if necessary
+    './templates/login.html',
+    './templates/payments.html',
   ],
   theme: {
     extend: {},

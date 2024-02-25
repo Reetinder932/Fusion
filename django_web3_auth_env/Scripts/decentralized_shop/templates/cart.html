@@ -124,13 +124,13 @@
 
     </div>
 
-    <a href="{% url 'payment'%}" class="bg-slate-400 rounded-lg p-3">buy now</a>
 
-    <div id="label" class="text-center"></div>
+    <div class="bg-gradient-to-r from-blue-600 to-blue-800 h-screen ">
+        <div id="label" class="text-center"></div>
 
-    <div id="shoppingcart" class="grid grid-cols-3 gap-2"> </div>
+        <div id="shoppingcart" class="grid grid-cols-3 gap-2"> </div>
 
-
+    </div>
     <script>const navLinks = document.querySelector('.nav-links')
         function onToggleMenu(e) {
             e.name = e.name === 'menu' ? 'close' : 'menu'
@@ -169,8 +169,8 @@
                 shoppingcart.innerHTML = basket.map((b) => {
                     let { id, item } = b;
                     let search = shopitemdata.find((y) => y.id === id) || {};
-                    return `<div><img src="${search.img1}"
-                        <h1> ${search.name}</h1> <br>
+                    return `<div><img src="${search.img1}"> 
+                        <a href="{% url 'payment'%}" class="bg-slate-400 rounded-lg mt-2 p-3">buy now</a>
                         </div>`;
                 }).join("");
             } else {
